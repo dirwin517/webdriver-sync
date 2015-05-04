@@ -158,6 +158,10 @@ RemoteWebDriver.prototype.getSessionId = function() {
     );
 };
 
+RemoteWebDriver.prototype.setSessionId = function(sessionId) {
+  this._instance.setSessionIdSync(new SessionId(sessionId));
+};
+
 RemoteWebDriver.prototype.setFileDetector = function(detector) {
   assert(detector).extends(FileDetector).throws(
     'detector wasn\'t an instance of FileDetector'
